@@ -41,7 +41,7 @@ export default function Navbar(){
                 {/* Logo and Name */}
                 <div className="flex items-center gap-3">
                     {/* Add your logo here if you have one */}
-                    <img src={Focus} alt="FocusForge" className="h-6 w-6 mb-1" />
+                    <img src={Focus} alt="FocusForge" className="h-8 w-8 mb-1" />
                     <span className="text-3xl font-logo mt-2">FOCUS~FORGE</span>
                 </div>
 

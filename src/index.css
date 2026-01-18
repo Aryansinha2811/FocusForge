@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 93.46% 0.0305 255.11;
+    --secondary-background: 100% 0 0;
+    --foreground: 0% 0 0;
+    --main-foreground: 0% 0 0;
+    --main: 67.47% 0.1726 259.49;
+    --border: 0% 0 0;
+    --ring: 0% 0 0;
+    --overlay: 0% 0 0;
+    --overlay-opacity: 0.8;
+    --chart-1: 82.94% 0.1544 258.34;
+    --chart-2: 66.89% 0.2093 22.18;
+    --chart-3: 86.07% 0.1867 95.57;
+    --chart-4: 79.33% 0.1549 162.48;
+    --chart-5: 70.59% 0.1726 268.19;
+    --chart-active-dot: 0% 0 0;
+    --radius: 5px;
+  }
+
+  .dark {
+    --background: 29.23% 0.0626 270.49;
+    --secondary-background: 23.93% 0 0;
+    --foreground: 92.49% 0 0;
+    --main-foreground: 0% 0 0;
+    --main: 67.47% 0.1726 259.49;
+    --border: 0% 0 0;
+    --ring: 100% 0 0;
+    --chart-1: 82.94% 0.1544 258.34;
+    --chart-2: 71.65% 0.2093 22.18;
+    --chart-3: 82.35% 0.1716 95.57;
+    --chart-4: 74.51% 0.1549 162.48;
+    --chart-5: 70.59% 0.1726 268.19;
+    --chart-active-dot: 100% 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-weight: 500;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+  }
+}

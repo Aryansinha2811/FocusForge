@@ -1,3 +1,41 @@
+/* Logo Font  */
+@font-face {
+  font-family: 'Logo';
+  src: url(/src//assets/Fonts/Logo.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* Hero Font  */
+@font-face {
+  font-family: 'Hero';
+  src: url(/src//assets/Fonts/Hero.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Paragraph Font   */
+@font-face {
+  font-family: 'Paragraph';
+  src: url(/src/assets//Fonts/Paragraph.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Button Font  */
+
+@font-face {
+  font-family: 'Thick';
+  src: url(/src/assets//Fonts/Thick.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

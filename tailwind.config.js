@@ -7,6 +7,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        logo: ['Logo', 'sans-serif'],
+        hero: ['Hero', 'sans-serif'],
+        paragraph : ['Paragraph', 'sans-serif'],
+        button : ['Thick', 'sans-serif'],
+      },
       borderRadius: {
         base: 'var(--radius)',
         lg: 'var(--radius)',

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import ImageCard from '@/components/ui/image-card'
-import Aizen from '../../assets/Icons/Aizen.jpg'
+import Quote from '../../assets/Icons/Quote.jpg'
 
 
 export default function Hero() {
@@ -37,11 +37,11 @@ export default function Hero() {
 
                     {/* Right Side - Image Card */}
                     <div className="space-y-8 ml-60 mt-10">
-                        <div className="scale-110 md:scale-125">
+                        <div className="scale-120 md:scale-125">
                             <ImageCard
-                                className="font-hero"
-                                caption="Our Steemed Sensei"
-                                imageUrl={Aizen}
+                                className="font-hero text-xl"
+                                caption="Quote of the Day !"
+                                imageUrl={Quote}
                             />
                         </div>
                     </div>

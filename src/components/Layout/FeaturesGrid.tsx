@@ -33,7 +33,7 @@ export default function FeaturesGrid() {
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-hero mb-4">
                         Everything You Need to{" "}
-                        <span className="bg-main text-main-foreground px-3 py-1 border-4 border-border">
+                        <span className="bg-main text-main-foreground px-3 py-1 border-4 border-border rounded-xl">
                             Excel
                         </span>
                     </h2>

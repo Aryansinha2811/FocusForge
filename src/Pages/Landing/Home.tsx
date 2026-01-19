@@ -4,6 +4,7 @@ import FeaturesGrid from "@/components/Layout/FeaturesGrid"
 import Hero from "@/components/Layout/Hero"
 import HowItWorks from "@/components/Layout/HowItWorks"
 import Navbar from "@/components/Layout/Navbar"
+import Footer from "@/components/Layout/Footer"
 import { AuthModal } from "@/components/../Pages/Auth/AuthModal"
 
 export default function Home(){
@@ -22,7 +23,7 @@ export default function Home(){
             <FeaturesGrid />
             <HowItWorks />
             <CTASection />
-            
+            <Footer />
             <AuthModal 
                 isOpen={isAuthModalOpen}
                 onClose={() => setIsAuthModalOpen(false)}

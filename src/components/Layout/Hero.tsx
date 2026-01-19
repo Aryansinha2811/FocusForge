@@ -26,10 +26,10 @@ export default function Hero() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <Button size="lg" className="text-lg">
+                            <Button size="lg" className="text-lg font-button">
                                 Get Started →
                             </Button>
-                            <Button size="lg" variant="neutral" className="text-lg">
+                            <Button size="lg" variant="neutral" className="text-lg font-button">
                                 View Demo
                             </Button>
                         </div>

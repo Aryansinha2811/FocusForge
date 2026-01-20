@@ -1,52 +1,56 @@
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import Google from "../../assets/Icons/Google.png"
+// src/Pages/Auth/Login.tsx
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useAuth } from "@/context/AuthContext";
+import Google from "../../assets/Icons/Google.png";
 
 export function Login() {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] = useState("")
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState("");
+
+    const { login, loginWithGoogle } = useAuth();
 
     const handleLogin = async (e: React.FormEvent) => {
-        e.preventDefault()
-        setError("")
+        e.preventDefault();
+        setError("");
 
         // Basic validation
         if (!email || !password) {
-            setError("Please fill in all fields")
-            return
+            setError("Please fill in all fields");
+            return;
         }
 
-        setIsLoading(true)
+        setIsLoading(true);
 
-        // TODO: Add Firebase authentication here
         try {
-            console.log("Login attempt:", { email, password })
-            // await signInWithEmailAndPassword(auth, email, password)
-        } catch (err) {
-            setError("Invalid email or password")
+            await login(email, password);
+            // Navigation happens automatically in AuthContext
+        } catch (err: any) {
+            console.error("Login error:", err);
+            setError(err.message || "Invalid email or password");
         } finally {
-            setIsLoading(false)
+            setIsLoading(false);
         }
-    }
+    };
 
     const handleGoogleLogin = async () => {
-        setIsLoading(true)
-        setError("")
+        setIsLoading(true);
+        setError("");
 
-        // TODO: Add Google authentication here
         try {
-            console.log("Google login attempt")
-            // await signInWithPopup(auth, googleProvider)
-        } catch (err) {
-            setError("Google login failed")
+            await loginWithGoogle();
+            // Navigation happens automatically in AuthContext
+        } catch (err: any) {
+            console.error("Google login error:", err);
+            setError(err.message || "Google login failed");
         } finally {
-            setIsLoading(false)
+            setIsLoading(false);
         }
-    }
+    };
 
     return (
         <div className="space-y-6">
@@ -123,11 +127,12 @@ export function Login() {
                 disabled={isLoading}
             >
                 <img 
-                className="h-5 w-5"
-                src={Google} 
-                alt="Google" />
+                    className="h-5 w-5"
+                    src={Google} 
+                    alt="Google" 
+                />
                 Continue with Google
             </Button>
         </div>
-    )
+    );
 }

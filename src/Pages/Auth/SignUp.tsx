@@ -1,63 +1,67 @@
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import Google from "../../assets/Icons/Google.png"
+// src/Pages/Auth/SignUp.tsx
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useAuth } from "@/context/AuthContext";
+import Google from "../../assets/Icons/Google.png";
 
 export function SignUp() {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
-    const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] = useState("")
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState("");
+
+    const { signup, loginWithGoogle } = useAuth();
 
     const handleSignUp = async (e: React.FormEvent) => {
-        e.preventDefault()
-        setError("")
+        e.preventDefault();
+        setError("");
 
         // Validation
         if (!email || !password || !confirmPassword) {
-            setError("Please fill in all fields")
-            return
+            setError("Please fill in all fields");
+            return;
         }
 
         if (password.length < 6) {
-            setError("Password must be at least 6 characters")
-            return
+            setError("Password must be at least 6 characters");
+            return;
         }
 
         if (password !== confirmPassword) {
-            setError("Passwords do not match")
-            return
+            setError("Passwords do not match");
+            return;
         }
 
-        setIsLoading(true)
+        setIsLoading(true);
 
-        // TODO: Add Firebase authentication here
         try {
-            console.log("Sign up attempt:", { email, password })
-            // await createUserWithEmailAndPassword(auth, email, password)
-        } catch (err) {
-            setError("Failed to create account. Email may already be in use.")
+            await signup(email, password);
+            // Navigation happens automatically in AuthContext
+        } catch (err: any) {
+            console.error("Signup error:", err);
+            setError(err.message || "Failed to create account. Email may already be in use.");
         } finally {
-            setIsLoading(false)
+            setIsLoading(false);
         }
-    }
+    };
 
     const handleGoogleSignUp = async () => {
-        setIsLoading(true)
-        setError("")
+        setIsLoading(true);
+        setError("");
 
-        // TODO: Add Google authentication here
         try {
-            console.log("Google sign up attempt")
-            // await signInWithPopup(auth, googleProvider)
-        } catch (err) {
-            setError("Google sign up failed")
+            await loginWithGoogle();
+            // Navigation happens automatically in AuthContext
+        } catch (err: any) {
+            console.error("Google signup error:", err);
+            setError(err.message || "Google sign up failed");
         } finally {
-            setIsLoading(false)
+            setIsLoading(false);
         }
-    }
+    };
 
     return (
         <div className="space-y-6">
@@ -139,9 +143,10 @@ export function SignUp() {
                 disabled={isLoading}
             >
                 <img 
-                className="h-5 w-5"
-                src={Google} 
-                alt="Google" />
+                    className="h-5 w-5"
+                    src={Google} 
+                    alt="Google" 
+                />
                 Continue with Google
             </Button>
 
@@ -149,5 +154,5 @@ export function SignUp() {
                 By signing up, you agree to our Terms of Service and Privacy Policy
             </p>
         </div>
-    )
+    );
 }

@@ -37,11 +37,11 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
 
     return(
         <header 
-            className={`sticky top-2 z-50 w-full transition-transform duration-300 ${
+            className={`sticky top-3 z-50 w-full transition-transform duration-300 ${
                 isVisible ? 'translate-y-0' : '-translate-y-[calc(100%+0.5rem)]'
             }`}
         >
-            <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 bg-white border-2 border-border shadow-shadow rounded-xl">
+            <nav className="mx-auto flex max-w-6xl items-center justify-between p-4 bg-white border-2 border-border shadow-shadow rounded-xl">
                 {/* Logo and Name */}
                 <div className="flex items-center gap-3">
                     <img src={Focus} alt="FocusForge" className="h-8 w-8 mb-1" />

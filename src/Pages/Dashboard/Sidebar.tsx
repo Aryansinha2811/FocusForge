@@ -1,7 +1,13 @@
-// src/Pages/Dashboard/Sidebar.tsx
 import { useAuth } from '@/context/AuthContext';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import Logo from '../../assets/Icons/Focus.png'
+import Dashboard from '../../assets/Icons/Dashboard.png'
+import StudyTimer from '../../assets/Icons/StudyTimer.png'
+import Tasks from '../../assets/Icons/Task.png'
+import Notes from '../../assets/Icons/Notes.png'
+import Analytics from '../../assets/Icons/Analytics.png'
+import Profile from '../../assets/Icons/Profile.png'
 
 export function Sidebar() {
     const { user, logout } = useAuth();
@@ -22,77 +28,95 @@ export function Sidebar() {
     return (
         <div className="w-60 h-screen bg-transparent border-r-2 border-border flex flex-col">
             {/* Logo */}
-            <div className="p-6 border-b-2 border-border">
-                <h2 className="text-2xl font-hero font-bold">FocusForge</h2>
-                <p className="text-xs text-foreground/60 font-paragraph mt-1">
-                    Your Productivity Partner
-                </p>
+            <div className="p-5 border-b-2 border-border flex justify-evenly">
+                <img 
+                className='h-6 w-6'
+                src={Logo} 
+                alt="FocusForge Logo" />
+                <h2 className="text-3xl font-logo">FocusForge</h2>
             </div>
 
-            {/* User Info */}
-            {user && (
-                <div className="m-4 p-4 bg-white rounded-base border-2 border-border">
-                    <p className="text-sm font-hero text-foreground/60">Logged in as:</p>
-                    <p className="font-paragraph font-semibold truncate text-sm mt-1">
-                        {user.email}
-                    </p>
-                </div>
-            )}
-
             {/* Navigation Links */}
-            <nav className="flex-1 px-4 space-y-2">
+            <nav className="flex-1 px-4 mt-7 ">
                 <Link to="/dashboard">
                     <Button
-                        className={`w-full justify-start font-button mb-2 ${
+                        className={`w-full justify-start font-button text-[16px] mb-3 ${
                             isActive('/dashboard') ? 'bg-main text-white' : ''
                         }`}
                         variant={isActive('/dashboard') ? 'default' : 'neutral'}
                     >
-                        📊 Dashboard
+                        <img src={Dashboard} alt="Dashboard Icon" className="h-6 w-6 mr-2" />
+                        Dashboard
                     </Button>
                 </Link>
 
                 <Link to="/dashboard/tasks">
                     <Button
-                        className={`w-full justify-start font-button mb-2 ${
+                        className={`w-full justify-start font-button mb-3 text-[16px] ${
                             isActive('/dashboard/tasks') ? 'bg-main text-white' : ''
                         }`}
                         variant={isActive('/dashboard/tasks') ? 'default' : 'neutral'}
                     >
-                        ✓ Tasks
+                        <img 
+                        className='h-6 w-6 mr-2'
+                        src={Tasks} alt="" />
+                        Tasks
+                    </Button>
+                </Link>
+
+                <Link to="/dashboard/study-timer">
+                    <Button
+                        className={`w-full justify-start font-button mb-3 text-[16px] ${
+                            isActive('/dashboard/study-timer') ? 'bg-main text-white' : ''
+                        }`}
+                        variant={isActive('/dashboard/study-timer') ? 'default' : 'neutral'}
+                    >
+                        <img 
+                        className='h-6 w-6 mr-2'
+                        src={StudyTimer} alt="" />
+                        Study Timer
                     </Button>
                 </Link>
 
                 <Link to="/dashboard/notes">
                     <Button
-                        className={`w-full justify-start font-button mb-2 ${
+                        className={`w-full justify-start font-button mb-3 text-[16px] ${
                             isActive('/dashboard/notes') ? 'bg-main text-white' : ''
                         }`}
                         variant={isActive('/dashboard/notes') ? 'default' : 'neutral'}
                     >
-                        📝 Notes
+                        <img 
+                        className='h-6 w-6 mr-2'
+                        src={Notes} alt="" />
+                        Notes
                     </Button>
                 </Link>
 
                 <Link to="/dashboard/analytics">
                     <Button
-                        className={`w-full justify-start font-button mb-2 ${
+                        className={`w-full justify-start font-button mb-3 text-[16px] ${
                             isActive('/dashboard/analytics') ? 'bg-main text-white' : ''
                         }`}
                         variant={isActive('/dashboard/analytics') ? 'default' : 'neutral'}
                     >
-                        📈 Analytics
+                        <img 
+                        className='h-6 w-6 mr-2'
+                        src={Analytics} alt="" />
+                        Analytics
                     </Button>
                 </Link>
 
                 <Link to="/dashboard/profile">
                     <Button
-                        className={`w-full justify-start font-button mb-2 ${
+                        className={`w-full justify-start font-button mb-1 text-[16px] ${
                             isActive('/dashboard/profile') ? 'bg-main text-white' : ''
                         }`}
                         variant={isActive('/dashboard/profile') ? 'default' : 'neutral'}
                     >
-                        👤 Profile
+                        <img 
+                        className='h-6 w-6 mr-2'
+                        src={Profile} alt="" />
+                        Profile
                     </Button>
                 </Link>
             </nav>

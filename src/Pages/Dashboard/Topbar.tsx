@@ -6,9 +6,9 @@ export function Topbar() {
     const { user } = useAuth();
 
     return (
-        <div className="h-20 bg-transparent border-b-2 border-border px-5 flex items-center justify-between">
+        <div className="h-20 top-1 mb-0 bg-transparent border-b-2 border-border px-4 flex items-center justify-between">
             {/* Search Bar */}
-            <div className="flex-1 max-w-2xl max-h-30">
+            <div className="flex-1 max-w-2xl max-h-28">
                 <Input
                     type="text"
                     placeholder="Search tasks, notes, or sessions..."

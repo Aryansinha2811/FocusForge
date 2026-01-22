@@ -15,7 +15,7 @@ export function DashboardLayout() {
                 <Topbar />
 
                 {/* Content area - This is where nested routes render */}
-                <main className="flex-1 overflow-auto p-8">
+                <main className="flex-1 overflow-auto p-4">
                     <Outlet /> {/* This renders Dashboard.tsx, Tasks.tsx, Notes.tsx, etc. */}
                 </main>
             </div>

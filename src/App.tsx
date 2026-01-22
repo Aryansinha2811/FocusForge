@@ -8,10 +8,11 @@ import Notes from './Pages/Dashboard/Notes';
 import Analytics from './Pages/Dashboard/Analytics';
 import Profile from './Pages/Dashboard/Profile';
 import ProtectedRoute from './ProtectedRoute';
+import StudyTimer from './Pages/Dashboard/StudyTimer';
 
 function App() {
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen p-4">
       <Routes>
         {/* Landing Page */}
         <Route path="/" element={<Home />} />
@@ -26,11 +27,12 @@ function App() {
           }
         >
           {/* Nested routes - these render inside DashboardLayout's <Outlet /> */}
-          <Route index element={<Dashboard />} /> {/* /dashboard */}
-          <Route path="tasks" element={<Tasks />} /> {/* /dashboard/tasks */}
-          <Route path="notes" element={<Notes />} /> {/* /dashboard/notes */}
-          <Route path="analytics" element={<Analytics />} /> {/* /dashboard/analytics */}
-          <Route path="profile" element={<Profile />} /> {/* /dashboard/profile */}
+          <Route index element={<Dashboard />} /> 
+          <Route path="tasks" element={<Tasks />} /> 
+          <Route path="notes" element={<Notes />} /> 
+          <Route path="analytics" element={<Analytics />} /> 
+          <Route path="profile" element={<Profile />} /> 
+          <Route path="study-timer" element={<StudyTimer />} />
         </Route>
 
         {/* Redirect any unknown routes to home */}

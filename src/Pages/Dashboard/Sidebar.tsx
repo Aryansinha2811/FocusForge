@@ -10,7 +10,7 @@ import Analytics from '../../assets/Icons/Analytics.png'
 import Profile from '../../assets/Icons/Profile.png'
 
 export function Sidebar() {
-    const { user, logout } = useAuth();
+    const { logout } = useAuth();
     const location = useLocation();
 
     const handleLogout = async () => {

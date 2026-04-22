@@ -27,7 +27,7 @@ export function Topbar() {
                     </div>
                     <div className="hidden md:block">
                         <p className="font-button font-semibold text-sm">
-                            {user?.displayName || 'John Doe'}
+                            {user?.displayName || 'Homelander'}
                         </p>
                         <p className="text-xs text-foreground/60 font-paragraph">
                             {user?.email || 'you@gmail.com'}

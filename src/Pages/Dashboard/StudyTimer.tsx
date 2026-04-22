@@ -114,7 +114,7 @@ export default function StudyTimer() {
     const progressPercentage = ((MODE_TIMES[mode] - timeLeft) / MODE_TIMES[mode]) * 100;
 
     return (
-        <div className="p-8 max-w-7xl mx-auto">
+        <div className="p-4 md:p-8 max-w-7xl mx-auto">
             {/* Header */}
             <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
                 <div>

@@ -127,9 +127,8 @@ export default function Analytics() {
     );
 
     return (
-        <div className="min-h-screen bg-transparent p-4">
-            <div className="max-w-7xl ">
-                {/* Header */}
+        <div className="p-4 md:p-8 max-w-7xl mx-auto min-h-screen bg-transparent">
+            {/* Header */}
                 <div className="mb-4">
                     <h1 className="text-4xl font-hero mb-2 uppercase tracking-tight">Analytics</h1>
                     <p className="text-[16px] font-hero">Track your productivity and progress</p>
@@ -273,8 +272,6 @@ export default function Analytics() {
                         </CardContent>
                     </Card>
                 </div>
-
-            </div>
         </div>
     );
 }

@@ -67,9 +67,9 @@ export default function Tasks() {
     };
 
     return (
-        <div className="p-8 max-w-7xl mx-auto">
+        <div className="p-4 md:p-8 max-w-7xl mx-auto">
             {/* Header */}
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
                 <div>
                     <h1 className="text-5xl font-hero font-bold mb-2">Tasks</h1>
                     <p className="text-gray-600 font-paragraph text-lg">

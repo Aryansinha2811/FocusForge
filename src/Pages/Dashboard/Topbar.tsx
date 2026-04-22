@@ -1,28 +1,42 @@
 // src/Pages/Dashboard/Topbar.tsx
 import { useAuth } from '@/context/AuthContext';
 import { Input } from '@/components/ui/input';
+import { Menu } from 'lucide-react';
 
-export function Topbar() {
+interface TopbarProps {
+    onMenuClick?: () => void;
+}
+
+export function Topbar({ onMenuClick }: TopbarProps) {
     const { user } = useAuth();
 
     return (
-        <div className="h-20 top-1 mb-0 bg-transparent border-b-2 border-border px-4 flex items-center justify-between">
+        <div className="h-20 top-1 mb-0 bg-transparent border-b-2 border-border px-4 flex items-center justify-between gap-2">
+            {/* Mobile Menu Button */}
+            <button 
+                onClick={onMenuClick}
+                className="md:hidden p-2 border-2 border-black rounded-base bg-white shadow-sm hover:translate-x-1 hover:translate-y-1 transition-all"
+            >
+                <Menu size={24} />
+            </button>
+
             {/* Search Bar */}
-            <div className="flex-1 max-w-2xl max-h-28">
+            <div className="flex-1 max-w-2xl max-h-28 hidden sm:block">
                 <Input
                     type="text"
                     placeholder="Search tasks, notes, or sessions..."
-                    className="w-full font-paragraph"
+                    className="w-full font-paragraph border-2 border-black rounded-base"
                 />
             </div>
+            
+            {/* Mobile Search Icon Alternative (optional, kept simple) */}
+            <div className="flex-1 sm:hidden"></div>
 
             {/* Right side - Notifications & User */}
             <div className="flex items-center gap-4">
-            
-
                 {/* User Profile */}
                 <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-main text-white rounded-full flex items-center justify-center font-bold font-button">
+                    <div className="w-10 h-10 bg-main text-white rounded-full flex items-center justify-center font-bold font-button border-2 border-black">
                         {user?.email?.charAt(0).toUpperCase() || 'J'}
                     </div>
                     <div className="hidden md:block">

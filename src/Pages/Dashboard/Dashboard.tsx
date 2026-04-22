@@ -132,7 +132,7 @@ export default function Dashboard() {
     }
 
     return (
-        <div className="p-8 max-w-7xl mx-auto">
+        <div className="p-4 md:p-8 max-w-7xl mx-auto">
             {/* Header */}
             <div className="mb-8">
                 <h1 className="text-4xl font-hero font-bold mb-1">Dashboard</h1>

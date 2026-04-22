@@ -36,8 +36,8 @@ export default function Hero() {
                     </div>
 
                     {/* Right Side - Image Card */}
-                    <div className="space-y-8 ml-60 mt-10">
-                        <div className="scale-120 md:scale-125">
+                    <div className="space-y-8 md:ml-10 lg:ml-20 mt-10 md:mt-0 flex justify-center">
+                        <div className="scale-100 sm:scale-110 md:scale-125 origin-center">
                             <ImageCard
                                 className="font-hero text-xl"
                                 caption="Quote of the Day !"

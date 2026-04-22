@@ -41,7 +41,7 @@ export default function Navbar({ onOpenAuth }: NavbarProps) {
                 isVisible ? 'translate-y-0' : '-translate-y-[calc(100%+0.5rem)]'
             }`}
         >
-            <nav className="mx-auto flex max-w-6xl items-center justify-between p-4 bg-white border-2 border-border shadow-shadow rounded-xl">
+            <nav className="mx-auto flex flex-wrap max-w-6xl items-center justify-center sm:justify-between gap-y-4 p-4 bg-white border-2 border-border shadow-shadow rounded-xl">
                 {/* Logo and Name */}
                 <div className="flex items-center gap-3">
                     <img src={Focus} alt="FocusForge" className="h-8 w-8 mb-1" />

@@ -5,7 +5,7 @@ import Github from "../../assets/Icons/Github.png"
 export default function Footer() {
     return (
         <footer>
-            <div className="border-t-2 border-border mx-auto flex max-w-7xl items-center justify-between p-4 py-8 px-4 sm:px-6 lg:px-8">
+            <div className="border-t-2 border-border mx-auto flex flex-col sm:flex-row max-w-7xl items-center justify-between gap-4 p-4 py-8 px-4 sm:px-6 lg:px-8 text-center sm:text-left">
                 
                 {/* Left Side: Paragraph */}
                 <p className="text-[17px] text-foreground/70 font-paragraph">
